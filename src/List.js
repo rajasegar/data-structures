@@ -1,5 +1,6 @@
 //var List = function(){};
 (function() {
+    "use strict";
     List = function() {
     this.listSize = 0;
     this.pos = 0;
