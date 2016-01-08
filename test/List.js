@@ -1,4 +1,6 @@
 'use strict';
+require("../src/List.js");
+var assert = require("assert");
 describe("List", function() {
     var list;
 
@@ -7,19 +9,19 @@ describe("List", function() {
     });
     
     it("should not be undefined when initialized",function() {
-        expect(list).not.toBeUndefined();
+        assert(list,!undefined);
     });
 
     it("should set listSize to 0 on initialization",function() {
-        expect(list.listSize).toEqual(0);
+        assert.equal(list.listSize,0);
     });
 
     it("should set pos to 0 on creation", function() {
-        expect(list.pos).toEqual(0);
+        assert.equal(list.pos,0);
     });
 
     it("should have an empty dataStore",function() {
-        expect(list.dataStore.length).toEqual(0);
+        assert.equal(list.dataStore.length,0);
     });
 
 
@@ -27,15 +29,15 @@ describe("List", function() {
         
         it("should clear the list",function(){
             list.clear();
-            expect(list.dataStore.length).toEqual(0);
+            assert.equal(list.dataStore.length,0);
         });
 
         it("should set listSize to 0", function() {
-            expect(list.listSize).toEqual(0);
+            assert.equal(list.listSize,0);
         });
 
         it("should set pos to 0", function() {
-            expect(list.pos).toEqual(0);
+            assert(list.pos === 0);
         });
     });
 
@@ -43,19 +45,19 @@ describe("List", function() {
         it("should return the index if the element is found", function() {
             list.append("Batman");
             var found = list.find("Batman");
-            expect(found).toBeGreaterThan(-1);
+            assert(found > -1);
         });
 
         it("should return -1 if the element is not found",function(){
             var found = list.find("Ironman");
-            expect(found).toEqual(-1);
+            assert(found === -1);
         });
     });
 
     describe("toString",function() {
         it("should return the dataStore",function() {
             list.append("Batman");
-            expect(list.toString()).toContain('Batman');
+            assert(list.toString().indexOf("Batman") > -1);
         });
     });
 
@@ -65,7 +67,7 @@ describe("List", function() {
             list.append("Batman");
             list.append("Spiderman");
             var inserted = list.insert("Ironman","Batman");
-            expect(list.find("Ironman")).toEqual(2);
+            assert(list.find("Ironman") === 2);
         });
 
         it("should return true after successfull insertion",function() {
@@ -73,18 +75,18 @@ describe("List", function() {
             list.append("Batman");
             list.append("Spiderman");
             var inserted = list.insert("Ironman","Batman");
-            expect(inserted).toBe(true);
+            assert(inserted);
         });
 
         it("should return false after un-successfull insertion", function() {
             var inserted = list.insert("Ironman","Superman");
-            expect(inserted).toBe(false);
+            assert(!inserted);
         });
 
         it("should increment listSize after successfull insertion", function() {
             list.append("Batman");
             list.insert("Ironman","Batman");
-            expect(list.listSize).toEqual(2);
+            assert(list.listSize === 2);
         });
 
 
@@ -93,12 +95,12 @@ describe("List", function() {
     describe("append",function() {
         it("should add the element at the end of the list",function() {
             list.append("Batman");
-            expect(list.find("Batman")).toEqual(0);
+            assert(list.find("Batman") === 0);
         });
 
         it("should increment the listSize", function() {
             list.append("Batman");
-            expect(list.listSize).toEqual(1);
+            assert(list.listSize === 1);
         });
     });
 
@@ -107,25 +109,25 @@ describe("List", function() {
         it("should return true for successfull removal",function() {
             list.append("Batman");
             var removed = list.remove("Batman");
-            expect(removed).toBe(true);
+            assert(removed);
         });
 
         it("should return false for un-successfull removal", function() {
             var removed = list.remove("Batman");
-            expect(removed).toBe(false);
+            assert(!removed);
         });
 
         it("should remove the element from the list", function(){
             list.append("Batman");
             list.remove("Batman");
-            expect(list.find("Batman")).toEqual(-1);
+            assert(list.find("Batman") === -1);
         });
 
         it("should decrement the listSize after successfull removal", function() {
             list.append("Ironman");
             list.append("Batman");
             list.remove("Batman");
-            expect(list.listSize).toEqual(1);
+            assert(list.listSize === 1);
         });
 
 
@@ -135,7 +137,7 @@ describe("List", function() {
     describe("first",function() {
         it("should set the pos to 0",function(){
             list.first();
-            expect(list.pos).toEqual(0);
+            assert(list.pos === 0);
         });
 
     });
@@ -145,7 +147,7 @@ describe("List", function() {
             list.append("Ironman");
             list.append("Batman");
             list.last();
-            expect(list.pos).toEqual(list.find("Batman"));
+            assert(list.pos === list.find("Batman"));
         });
     });
 
@@ -155,7 +157,8 @@ describe("List", function() {
             list.append("Batman");
             list.moveTo(1);
             list.prev();
-            expect(list.pos).toEqual(0);
+            assert(list.pos === 0);
+            
         });
 
         it("should not decrement the pos if pos is <= 0", function() {
@@ -163,7 +166,7 @@ describe("List", function() {
             list.append("Batman");
             list.moveTo(0);
             list.prev();
-            expect(list.pos).toEqual(0);
+            assert(list.pos === 0);
         });
 
     });
@@ -173,7 +176,7 @@ describe("List", function() {
             list.append("Ironman");
             list.append("Batman");
             list.next();
-            expect(list.pos).toEqual(1);
+            assert(list.pos === 1);
         });
 
         it("should not increment the pos if pos is >= listSize", function() {
@@ -181,7 +184,7 @@ describe("List", function() {
             list.append("Batman");
             list.moveTo(1);
             list.next();
-            expect(list.pos).toEqual(1);
+            assert(list.pos === 1);
         });
     });
 
@@ -189,7 +192,7 @@ describe("List", function() {
         it("should return the listSize", function() {
             list.append("Ironman");
             list.append("Batman");
-            expect(list.length()).toEqual(2);
+            assert(list.length() === 2);
         });
     });
 
@@ -198,7 +201,7 @@ describe("List", function() {
             list.append("Ironman");
             list.append("Batman");
             list.moveTo(1);
-            expect(list.currPos()).toEqual(1);
+            assert(list.currPos() === 1);
         });
 
     });
@@ -208,7 +211,7 @@ describe("List", function() {
             list.append("Ironman");
             list.append("Batman");
             list.moveTo(1);
-            expect(list.pos).toEqual(1);
+            assert(list.pos === 1);
         });
     });
 
@@ -217,7 +220,7 @@ describe("List", function() {
             list.append("Ironman");
             list.append("Batman");
             list.moveTo(1);
-            expect(list.getElement()).toEqual("Batman");
+            assert(list.getElement() === "Batman");
         });
 
     });
@@ -225,11 +228,11 @@ describe("List", function() {
         it("should return true if element is found", function() {
             list.append("Ironman");
             list.append("Batman");
-            expect(list.contains("Batman")).toBe(true);
+            assert(list.contains("Batman"));
         });
 
         it("should return false if element is not found", function() {
-            expect(list.contains("Stan Lee")).toBe(false);
+            assert(!list.contains("Stan Lee"));
         });
     });
 

@@ -4,9 +4,10 @@
   "description": "Data Structures in Javascript",
   "main": "List.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
+    "test": "mocha test/",
     "lint": "jshint **.js",
-    "build": "uglifyjs-folder ./src -eo ./dist "
+    "build": "scripts/build.js",
+    "clean": "rm -r dist/*"
   },
   "repository": {
     "type": "git",
@@ -24,11 +25,8 @@
   },
   "homepage": "https://github.com/rajasegar/data-structures#readme",
   "devDependencies": {
-    "grunt": "^0.4.5",
-    "grunt-contrib-clean": "^0.7.0",
-    "grunt-contrib-jasmine": "^0.9.2",
-    "grunt-contrib-jshint": "^0.11.3",
-    "grunt-contrib-uglify": "^0.11.0",
-    "grunt-contrib-watch": "^0.6.1"
+    "glob": "^6.0.3",
+    "mocha": "^2.3.4",
+    "uglify-js": "^2.6.1"
   }
 }

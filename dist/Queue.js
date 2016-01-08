@@ -1,2 +1,0 @@
-/*! data-structures 2016-01-08 */
-!function(){Queue=function(){this.dataStore=[],console.log("Queue created")},Queue.prototype={enqueue:function(a){this.dataStore.push(a)},dequeue:function(){return this.dataStore.shift()},front:function(){return this.dataStore[0]},back:function(){return this.dataStore[this.dataStore.length-1]},toString:function(){for(var a="",b=this.dataStore.length,c=0;b>c;++c)a+=this.dataStore[c]+"\n";return a},empty:function(){return 0===this.dataStore.length?!0:!1}}}();
