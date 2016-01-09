@@ -1,7 +1,6 @@
 // Stack ADT
 (function() {
     Stack = function() {
-        console.log("Stack created");
         this.dataStore = [];
         this.top = 0;
         
@@ -21,6 +20,8 @@
             return this.top;
         },
         clear: function() {
+            delete this.dataStore;
+            this.dataStore = [];
             this.top = 0;
         }
         

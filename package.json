@@ -2,10 +2,11 @@
   "name": "data-structures",
   "version": "1.0.0",
   "description": "Data Structures in Javascript",
-  "main": "List.js",
+  "main": "index.js",
   "scripts": {
     "test": "mocha test/",
-    "lint": "jshint **.js",
+    "lint": "jshint ./src/*.js",
+    "prebuild": "jshint ./src/*.js",
     "build": "scripts/build.js",
     "clean": "rm -r dist/*"
   },
@@ -26,6 +27,7 @@
   "homepage": "https://github.com/rajasegar/data-structures#readme",
   "devDependencies": {
     "glob": "^6.0.3",
+    "jshint": "^2.8.0",
     "mocha": "^2.3.4",
     "uglify-js": "^2.6.1"
   }
