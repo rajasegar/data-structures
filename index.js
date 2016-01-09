@@ -6,7 +6,7 @@
  * @copyright Rajasegar Chandran, 2016.
  */
 
-var List = require('./dist/List.min.js');
+var List = require('./src/List.js');
 var Stack = require('./dist/Stack.min.js');
 var Queue = require('./dist/Queue.min.js');
 
