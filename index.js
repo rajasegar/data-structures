@@ -6,9 +6,9 @@
  * @copyright Rajasegar Chandran, 2016.
  */
 
-var List = require('./src/List.js');
-var Stack = require('./src/Stack');
-var Queue = require('./src/Queue');
+var List = require('./lib/List');
+var Stack = require('./lib/Stack');
+var Queue = require('./lib/Queue');
 
 module.exports = {
     List:List,

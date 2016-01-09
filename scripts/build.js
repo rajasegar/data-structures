@@ -4,8 +4,8 @@ var fs = require("fs");
 var path = require("path");
 var UglifyJS = require("uglify-js");
 var glob = require("glob");
-var dir = path.resolve("src");
-glob("**/*.js",{cwd:'src'},function(err,files) {
+var dir = path.resolve("lib");
+glob("**/*.js",{cwd:'lib'},function(err,files) {
     if(err) throw err;
     files.forEach(function(file){
         var file_path = path.resolve(dir + "/" +  file);

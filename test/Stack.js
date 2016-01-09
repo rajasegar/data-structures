@@ -1,5 +1,5 @@
 'use strict';
-require("../src/Stack.js");
+var Stack = require("../lib/Stack");
 var assert = require("assert");
 describe("Stack", function() {
     var stack;

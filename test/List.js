@@ -1,5 +1,5 @@
 'use strict';
-require("../src/List.js");
+var List = require("../lib/List");
 var assert = require("assert");
 describe("List", function() {
     var list;
