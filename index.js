@@ -7,8 +7,8 @@
  */
 
 var List = require('./src/List.js');
-var Stack = require('./dist/Stack.min.js');
-var Queue = require('./dist/Queue.min.js');
+var Stack = require('./src/Stack');
+var Queue = require('./src/Queue');
 
 module.exports = {
     List:List,
