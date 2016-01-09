@@ -1,6 +1,6 @@
 {
   "name": "nodejs-data-structures",
-  "version": "1.0.3",
+  "version": "1.0.4",
   "description": "Data Structures in Javascript",
   "main": "index.js",
   "scripts": {
