@@ -8,6 +8,7 @@ Data Structures and Algorithms using Javascript
 * Stack
 * Queue
 * List
+* More coming...
 
 ## License
 MIT
