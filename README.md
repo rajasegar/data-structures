@@ -11,11 +11,14 @@ Data Structures and Algorithms using Javascript
 * More coming...
 
 ## Sample Code 
-```
-export function Component(sources) {
- return isolate(OriginalComponent)(sources);
-}
-```
+>
+>```
+>
+>export function Component(sources) {
+> return isolate(OriginalComponent)(sources);
+>}
+>
+>```
 
 ## License
 MIT
