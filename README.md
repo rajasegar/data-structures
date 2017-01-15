@@ -10,5 +10,10 @@ Data Structures and Algorithms using Javascript
 * List
 * More coming...
 
+## Sample Code 
+`export function Component(sources) {`<br/>
+` return isolate(OriginalComponent)(sources);`<br /> 
+`}`
+
 ## License
 MIT
